@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - SparkLink</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .notification-item:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease;
+        }
+        .unseen-indicator {
+            width: 8px;
+            height: 8px;
+            background-color: red;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-white font-bold text-lg">SparkLink</h1>
+        <div class="flex items-center">
+            <a href="../templates/home.html" class="text-white mr-4">Home</a>
+            <a href="../templates/profile.html" class="text-white mr-4">Profile</a>
+            <a href="../templates/chat.html" class="text-white mr-4">Chat</a>
+            <a href="../templates/notification.html" class="text-white mr-4">Notification</a>
+            <a href="#" class="text-white">Log Out</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Notification Section -->
+<div class="container mx-auto mt-8 px-4">
+
+    <!-- Now -->
+    <div class="bg-white rounded-lg shadow-md mb-8 overflow-hidden">
+        <!-- Header -->
+        <div class="bg-blue-500 px-4 py-3">
+            <h2 class="text-lg font-semibold text-white">Now</h2>
+        </div>
+        <!-- Unseen Message Indicator -->
+        <div class="bg-red-500 h-1"></div>
+
+        <!-- Notification List -->
+        <div class="p-4">
+            <!-- Single Notification Item -->
+            <a href="#" class="block notification-item py-3 px-4 hover:bg-gray-100 transition duration-300">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                            <i class="far fa-bell"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-800 font-semibold">You have a new follower</p>
+                            <p class="text-gray-600">John Doe started following you. <span class="text-gray-500">(2 hours ago)</span></p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600">2h</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Yesterday -->
+    <div class="bg-white rounded-lg shadow-md mb-8 overflow-hidden">
+        <!-- Header -->
+        <div class="bg-blue-500 px-4 py-3">
+            <h2 class="text-lg font-semibold text-white">Yesterday</h2>
+        </div>
+        <!-- Notification List -->
+        <div class="p-4">
+            <!-- Single Notification Item -->
+            <a href="#" class="block notification-item py-3 px-4 hover:bg-gray-100 transition duration-300">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                            <i class="far fa-bell"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-800 font-semibold">Your post was shared</p>
+                            <p class="text-gray-600">Sarah Smith shared your post. <span class="text-gray-500">(Yesterday)</span></p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600">Yesterday</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Last Week -->
+    <div class="bg-white rounded-lg shadow-md mb-8 overflow-hidden">
+        <!-- Header -->
+        <div class="bg-blue-500 px-4 py-3">
+            <h2 class="text-lg font-semibold text-white">Last Week</h2>
+        </div>
+        <!-- Notification List -->
+        <div class="p-4">
+            <!-- Single Notification Item -->
+            <a href="#" class="block notification-item py-3 px-4 hover:bg-gray-100 transition duration-300">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                            <i class="far fa-bell"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-800 font-semibold">Your post was liked</p>
+                            <p class="text-gray-600">Alex Johnson liked your post. <span class="text-gray-500">(1 week ago)</span></p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600">1w</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

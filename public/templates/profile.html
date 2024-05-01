@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - SparkLink</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-white font-bold text-lg">SparkLink</h1>
+        <di<a href="../templates/home.html" class="text-white mr-4">Home</a>
+        <a href="../templates/profile.html" class="text-white mr-4">Profile</a>
+        <a href="../templates/chat.html" class="text-white mr-4">Chat</a>
+        <a href="../templates/notification.html" class="text-white mr-4">Notification</a>
+        <a href="#" class="text-white">Log Out</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Profile Header -->
+<div class="bg-white shadow-md mb-8">
+    <div class="container mx-auto py-8 px-4">
+        <div class="flex items-center">
+            <div class="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center mr-4">
+                <i class="fas fa-user text-gray-600 text-3xl"></i>
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold">John Doe</h2>
+                <p class="text-gray-600">Web Developer</p>
+                <p class="text-blue-500 underline"><a href="#">www.johndoe.com</a></p>
+            </div>
+            <button class="ml-auto bg-blue-500 text-white px-4 py-2 rounded-lg"><i class="fas fa-edit mr-2"></i> Edit Profile</button>
+        </div>
+    </div>
+</div>
+
+<!-- Profile Content -->
+<div class="container mx-auto px-4">
+    <!-- Bio -->
+    <div class="bg-white shadow-md rounded-lg mb-8 p-6">
+        <h3 class="text-lg font-semibold mb-4">Bio</h3>
+        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet ante vitae sapien vestibulum tincidunt. Sed non efficitur odio. Donec sodales hendrerit mi nec maximus. <a href="#" class="text-blue-500 underline">Read more</a></p>
+    </div>
+
+    <!-- Highlights -->
+    <div class="bg-white shadow-md rounded-lg mb-8 p-6">
+        <h3 class="text-lg font-semibold mb-4">Highlights</h3>
+        <!-- Add highlight items here -->
+    </div>
+
+    <!-- Archive -->
+    <div class="bg-white shadow-md rounded-lg mb-8 p-6">
+        <h3 class="text-lg font-semibold mb-4">Archive</h3>
+        <!-- Add archive items here -->
+    </div>
+
+    <!-- Saved -->
+    <div class="bg-white shadow-md rounded-lg mb-8 p-6">
+        <h3 class="text-lg font-semibold mb-4">Saved</h3>
+        <!-- Add saved items here -->
+    </div>
+
+    <!-- Posts -->
+    <div class="bg-white shadow-md rounded-lg mb-8 p-6">
+        <h3 class="text-lg font-semibold mb-4">Posts</h3>
+        <!-- Example Post -->
+        <div class="mb-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet ante vitae sapien vestibulum tincidunt. Sed non efficitur odio. Donec sodales hendrerit mi nec maximus.</p>
+                    <img src="https://via.placeholder.com/400x200" alt="Example Post" class="mt-2">
+                </div>
+                <div class="flex items-center">
+                    <div class="relative">
+                        <button class="text-gray-600" onclick="toggleMenu(this)"><i class="fas fa-ellipsis-h"></i></button>
+                        <div class="absolute right-0 mt-2 bg-white border border-gray-200 shadow-md rounded-lg py-2 w-32 hidden">
+                            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Delete</a>
+                            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Share</a>
+                            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Set Private</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add more post items here -->
+    </div>
+
+    <!-- Photos -->
+    <div class="bg-white shadow-md rounded-lg mb-8 p-6">
+        <h3 class="text-lg font-semibold mb-4">Photos</h3>
+        <!-- Example Photo -->
+        <div class="grid grid-cols-3 gap-4">
+            <img src="https://via.placeholder.com/150" alt="Example Photo">
+            <img src="https://via.placeholder.com/150" alt="Example Photo">
+            <img src="https://via.placeholder.com/150" alt="Example Photo">
+            <!-- Add more photo items here -->
+        </div>
+    </div>
+</div>
+
+<script src="../scripts/profile.js">
+    
+</script>
+
+</body>
+</html>

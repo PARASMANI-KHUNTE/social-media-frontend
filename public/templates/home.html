@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - SparkLink</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+<!-- Navbar -->
+<nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-white font-bold text-lg">SparkLink</h1>
+        <div class="flex items-center">
+            <a href="../templates/home.html" class="text-white mr-4">Home</a>
+            <a href="../templates/profile.html" class="text-white mr-4">Profile</a>
+            <a href="../templates/chat.html" class="text-white mr-4">Chat</a>
+            <a href="../templates/notification.html" class="text-white mr-4">Notification</a>
+            <button onclick="togglePostSectionVisibility()" class="text-white mr-4">Post</button>
+            <a href="#" class="text-white">Log Out</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Create Post Section (Hidden by Default) -->
+<div id="postSection" class="container mx-auto mt-8 px-4" style="display: none;">
+    <div class="bg-white p-4 rounded-lg shadow-md">
+        <h2 class="text-lg font-semibold mb-4">Create a New Post</h2>
+        <form>
+            <div class="mb-4">
+                <label for="postContent" class="block text-gray-700">Post Content</label>
+                <textarea id="postContent" name="postContent" rows="5" class="w-full px-4 py-2 mt-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="postFile" class="block text-gray-700">Choose File (Optional)</label>
+                <input type="file" id="postFile" name="postFile" class="w-full px-4 py-2 mt-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Select Content Type</label>
+                <div class="flex items-center">
+                    <input type="radio" id="textPost" name="contentType" value="text" class="mr-2">
+                    <label for="textPost" class="mr-4">Text</label>
+                    <input type="radio" id="imagePost" name="contentType" value="image" class="mr-2">
+                    <label for="imagePost" class="mr-4">Image</label>
+                    <input type="radio" id="videoPost" name="contentType" value="video" class="mr-2">
+                    <label for="videoPost" class="mr-4">Video</label>
+                    <input type="radio" id="audioPost" name="contentType" value="audio" class="mr-2">
+                    <label for="audioPost">Audio</label>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700">Select Post Visibility</label>
+                <div class="flex items-center">
+                    <input type="radio" id="publicPost" name="postVisibility" value="public" class="mr-2">
+                    <label for="publicPost" class="mr-4">Public</label>
+                    <input type="radio" id="privatePost" name="postVisibility" value="private" class="mr-2">
+                    <label for="privatePost">Private</label>
+                </div>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Post</button>
+        </form>
+    </div>
+</div>
+
+<!-- Middle Bar -->
+<div class="container mx-auto mt-8 px-4">
+    <!-- Latest Posts Section -->
+    <!-- <nav class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Latest Posts</h2>
+        Add More Navigation Tabs Here (Discover, Recent, etc.) 
+    </nav> -->
+    
+    <!-- Example Posts -->
+    <!-- Image Post -->
+    <div class="bg-white p-4 rounded-lg shadow-md mb-8">
+        <h3 class="text-gray-800 font-semibold">John Doe</h3>
+        <p class="text-gray-600">Public - 2 hours ago</p>
+        <img src="https://via.placeholder.com/400" alt="Image Post" class="mt-4">
+        <!-- Post Actions (Like, Dislike, Share, Comments) -->
+        <div class="flex items-center mt-4">
+            <button class="mr-2"><i class="far fa-thumbs-up"></i> Like <span class="text-gray-500 ml-1">15</span></button>
+            <button class="mr-2"><i class="far fa-thumbs-down"></i> Dislike <span class="text-gray-500 ml-1">3</span></button>
+            <button class="mr-2"><i class="far fa-comment"></i> Comment <span class="text-gray-500 ml-1">7</span></button>
+            <button><i class="far fa-share-square"></i> Share <span class="text-gray-500 ml-1">12</span></button>
+        </div>
+    </div>
+    
+    <!-- Video Post -->
+    <div class="bg-white p-4 rounded-lg shadow-md mb-8">
+        <h3 class="text-gray-800 font-semibold">Jane Smith</h3>
+        <p class="text-gray-600">Public - 1 day ago</p>
+        <video class="mt-2" width="100%" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Post Actions (Like, Dislike, Share, Comments) -->
+        <div class="flex items-center mt-4">
+            <button class="mr-2"><i class="far fa-thumbs-up"></i> Like <span class="text-gray-500 ml-1">10</span></button>
+            <button class="mr-2"><i class="far fa-thumbs-down"></i> Dislike <span class="text-gray-500 ml-1">2</span></button>
+            <button class="mr-2"><i class="far fa-comment"></i> Comment <span class="text-gray-500 ml-1">5</span></button>
+            <button><i class="far fa-share-square"></i> Share <span class="text-gray-500 ml-1">8</span></button>
+        </div>
+    </div>
+    
+    <!-- Audio Post -->
+    <div class="bg-white p-4 rounded-lg shadow-md mb-8">
+        <h3 class="text-gray-800 font-semibold">Alex Johnson</h3>
+        <p class="text-gray-600">Private - 3 days ago</p>
+        <audio class="mt-2" controls>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+        <!-- Post Actions (Like, Dislike, Share, Comments) -->
+        <div class="flex items-center mt-4">
+            <button class="mr-2"><i class="far fa-thumbs-up"></i> Like <span class="text-gray-500 ml-1">7</span></button>
+            <button class="mr-2"><i class="far fa-thumbs-down"></i> Dislike <span class="text-gray-500 ml-1">1</span></button>
+            <button class="mr-2"><i class="far fa-comment"></i> Comment <span class="text-gray-500 ml-1">3</span></button>
+            <button><i class="far fa-share-square"></i> Share <span class="text-gray-500 ml-1">6</span></button>
+        </div>
+    </div>
+    
+    <!-- Text Post -->
+    <div class="bg-white p-4 rounded-lg shadow-md mb-8">
+        <h3 class="text-gray-800 font-semibold">Sarah Williams</h3>
+        <p class="text-gray-600">Public - 1 week ago</p>
+        <p class="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lobortis, tortor eget vestibulum rutrum, ipsum ipsum ultricies eros, nec venenatis libero nisi sed turpis.</p>
+        <!-- Post Actions (Like, Dislike, Share, Comments) -->
+        <div class="flex items-center mt-4">
+            <button class="mr-2"><i class="far fa-thumbs-up"></i> Like <span class="text-gray-500 ml-1">20</span></button>
+            <button class="mr-2"><i class="far fa-thumbs-down"></i> Dislike <span class="text-gray-500 ml-1">5</span></button>
+            <button class="mr-2"><i class="far fa-comment"></i> Comment <span class="text-gray-500 ml-1">12</span></button>
+            <button><i class="far fa-share-square"></i> Share <span class="text-gray-500 ml-1">15</span></button>
+        </div>
+    </div>
+</div>
+
+<script src="../scripts/home.js">
+    
+</script>
+
+</body>
+</html>
